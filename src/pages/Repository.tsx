@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -99,8 +98,7 @@ const FileCard = ({
 };
 const Repository = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  return (
-    <div className="container mx-auto px-4 py-8 relative overflow-hidden">
+  return <div className="container mx-auto px-4 py-8 relative overflow-hidden">
       {/* Wave Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-mui-lightTeal/10 to-transparent"></div>
@@ -116,13 +114,7 @@ const Repository = () => {
       
       <div className="relative z-10 mb-6">
         <div className="relative">
-          <input 
-            type="text" 
-            placeholder="Cari file atau materi..." 
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-mui-teal" 
-            value={searchQuery} 
-            onChange={e => setSearchQuery(e.target.value)} 
-          />
+          <input type="text" placeholder="Cari file atau materi..." className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-mui-teal" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
         </div>
       </div>
       
@@ -134,9 +126,7 @@ const Repository = () => {
           <TabsTrigger value="papers" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-mui-teal data-[state=active]:to-mui-blue data-[state=active]:text-white">
             Makalah
           </TabsTrigger>
-          <TabsTrigger value="assignments" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-mui-teal data-[state=active]:to-mui-blue data-[state=active]:text-white">
-            Tugas
-          </TabsTrigger>
+          <TabsTrigger value="assignments" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-mui-teal data-[state=active]:to-mui-blue data-[state=active]:text-white">Ringkasan</TabsTrigger>
         </TabsList>
         
         <TabsContent value="materials" className="space-y-4">
@@ -187,7 +177,6 @@ const Repository = () => {
           </div>
         </TabsContent>
       </Tabs>
-    </div>
-  );
+    </div>;
 };
 export default Repository;
