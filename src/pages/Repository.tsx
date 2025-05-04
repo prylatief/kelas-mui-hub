@@ -123,7 +123,7 @@ const Repository = () => {
           <TabsTrigger value="papers" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-mui-teal data-[state=active]:to-mui-blue data-[state=active]:text-white">
             Makalah
           </TabsTrigger>
-          <TabsTrigger value="assignments" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-mui-teal data-[state=active]:to-mui-blue data-[state=active]:text-white">Tugas</TabsTrigger>
+          <TabsTrigger value="assignments" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-mui-teal data-[state=active]:to-mui-blue data-[state=active]:text-white">Ringkasan</TabsTrigger>
         </TabsList>
         
         <TabsContent value="materials" className="space-y-4">
