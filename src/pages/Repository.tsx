@@ -73,9 +73,24 @@ const FileCard = ({
     }
   };
   return <Card className="hover:shadow-md transition-shadow border-t-4 border-t-mui-teal">
-      
-      
-      
+      <CardHeader>
+        <CardTitle className="flex items-center">
+          {getIcon(file.type)}
+          <span className="ml-2">{file.title}</span>
+        </CardTitle>
+        <CardDescription>{file.description}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm text-gray-500">
+          Tanggal: {file.date} | Ukuran: {file.size}
+        </p>
+      </CardContent>
+      <CardFooter>
+        <Button className="bg-gradient-to-r from-mui-teal to-mui-blue hover:from-mui-darkTeal hover:to-mui-darkBlue">
+          <Download className="mr-2" size={16} />
+          Unduh
+        </Button>
+      </CardFooter>
     </Card>;
 };
 const Repository = () => {
@@ -103,10 +118,12 @@ const Repository = () => {
       <Tabs defaultValue="materials" className="w-full relative z-10">
         <TabsList className="mb-6 bg-gray-100">
           <TabsTrigger value="materials" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-mui-teal data-[state=active]:to-mui-blue data-[state=active]:text-white">
-            Materi Kuliah
+            Ringkasan
           </TabsTrigger>
-          
-          <TabsTrigger value="assignments" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-mui-teal data-[state=active]:to-mui-blue data-[state=active]:text-white">Ringkasan</TabsTrigger>
+          <TabsTrigger value="papers" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-mui-teal data-[state=active]:to-mui-blue data-[state=active]:text-white">
+            Makalah
+          </TabsTrigger>
+          <TabsTrigger value="assignments" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-mui-teal data-[state=active]:to-mui-blue data-[state=active]:text-white">Tugas</TabsTrigger>
         </TabsList>
         
         <TabsContent value="materials" className="space-y-4">
@@ -126,7 +143,15 @@ const Repository = () => {
         </TabsContent>
         
         <TabsContent value="papers" className="space-y-4">
-          
+          <div className="flex justify-between items-center mb-4">
+            <h3 className="text-xl font-semibold text-mui-teal flex items-center">
+              <Waves className="mr-2" size={20} />
+              Makalah
+            </h3>
+            <Button className="bg-gradient-to-r from-mui-teal to-mui-blue hover:from-mui-darkTeal hover:to-mui-darkBlue">
+              Upload Makalah
+            </Button>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {papers.map(file => <FileCard key={file.id} file={file} />)}
