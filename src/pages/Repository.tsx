@@ -73,27 +73,9 @@ const FileCard = ({
     }
   };
   return <Card className="hover:shadow-md transition-shadow border-t-4 border-t-mui-teal">
-      <CardHeader className="pb-2">
-        <div className="flex items-start justify-between">
-          <div className="flex items-center gap-2">
-            {getIcon(file.type)}
-            <CardTitle className="text-lg">{file.title}</CardTitle>
-          </div>
-        </div>
-        <CardDescription>{file.description}</CardDescription>
-      </CardHeader>
-      <CardContent className="pb-2 text-sm">
-        <div className="flex justify-between text-muted-foreground">
-          <span>Tanggal: {file.date}</span>
-          <span>{file.size}</span>
-        </div>
-      </CardContent>
-      <CardFooter>
-        <Button className="w-full bg-gradient-to-r from-mui-teal to-mui-blue hover:from-mui-darkTeal hover:to-mui-darkBlue" variant="default">
-          <Download size={16} /> 
-          Download
-        </Button>
-      </CardFooter>
+      
+      
+      
     </Card>;
 };
 const Repository = () => {
@@ -123,9 +105,7 @@ const Repository = () => {
           <TabsTrigger value="materials" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-mui-teal data-[state=active]:to-mui-blue data-[state=active]:text-white">
             Materi Kuliah
           </TabsTrigger>
-          <TabsTrigger value="papers" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-mui-teal data-[state=active]:to-mui-blue data-[state=active]:text-white">
-            Makalah
-          </TabsTrigger>
+          
           <TabsTrigger value="assignments" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-mui-teal data-[state=active]:to-mui-blue data-[state=active]:text-white">Ringkasan</TabsTrigger>
         </TabsList>
         
@@ -146,15 +126,7 @@ const Repository = () => {
         </TabsContent>
         
         <TabsContent value="papers" className="space-y-4">
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="text-xl font-semibold text-mui-teal flex items-center">
-              <Waves className="mr-2" size={20} />
-              Makalah
-            </h3>
-            <Button className="bg-gradient-to-r from-mui-teal to-mui-blue hover:from-mui-darkTeal hover:to-mui-darkBlue">
-              Upload Makalah
-            </Button>
-          </div>
+          
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {papers.map(file => <FileCard key={file.id} file={file} />)}
