@@ -100,3 +100,46 @@
     @apply text-lg;
   }
 }
+
+/* Wave divider classes */
+.wave-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 65px;
+}
+
+.wave-divider .shape-fill {
+  fill: #0d9488;
+  opacity: 0.2;
+}
+
+/* Card hover effects */
+.teal-card {
+  @apply transition-all duration-300 hover:shadow-lg;
+  @apply border-t-4 border-t-mui-teal;
+}
+
+.teal-card:hover {
+  @apply transform -translate-y-1;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-mui-teal to-mui-blue text-transparent bg-clip-text;
+}
+
+/* Gradient buttons */
+.gradient-button {
+  @apply bg-gradient-to-r from-mui-teal to-mui-blue hover:from-mui-darkTeal hover:to-mui-darkBlue;
+}
+
