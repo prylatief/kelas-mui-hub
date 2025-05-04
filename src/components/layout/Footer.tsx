@@ -1,11 +1,7 @@
-
 import { Link } from "react-router-dom";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
-  return (
-    <footer className="bg-mui-darkBlue text-white py-8 mt-auto">
+  return <footer className="bg-mui-darkBlue text-white py-8 mt-auto">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -29,9 +25,9 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-bold mb-4">Kontak</h4>
             <address className="not-italic text-gray-300">
-              <p>Email: pku-mui@example.com</p>
-              <p>Phone: +62 123 4567 890</p>
-              <p>Address: Jalan MUI No. 123, Jakarta</p>
+              <p>Email: pku-mui19@example.com</p>
+              
+              
             </address>
           </div>
         </div>
@@ -40,8 +36,6 @@ const Footer = () => {
           <p>&copy; {currentYear} Kelas PKU MUI. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
