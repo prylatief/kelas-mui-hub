@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -73,18 +74,34 @@ const FileCard = ({
     }
   };
   return <Card className="hover:shadow-md transition-shadow">
-      <CardHeader>
-        
-        
+      <CardHeader className="pb-2">
+        <div className="flex items-start justify-between">
+          <div className="flex items-center gap-2">
+            {getIcon(file.type)}
+            <CardTitle className="text-lg">{file.title}</CardTitle>
+          </div>
+        </div>
+        <CardDescription>{file.description}</CardDescription>
       </CardHeader>
-      
+      <CardContent className="pb-2 text-sm">
+        <div className="flex justify-between text-muted-foreground">
+          <span>Tanggal: {file.date}</span>
+          <span>{file.size}</span>
+        </div>
+      </CardContent>
+      <CardFooter>
+        <Button className="w-full bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600" variant="default">
+          <Download size={16} /> 
+          Download
+        </Button>
+      </CardFooter>
     </Card>;
 };
 const Repository = () => {
   const [searchQuery, setSearchQuery] = useState("");
   return <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Repository File</h1>
+        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-teal-600 to-blue-600 text-transparent bg-clip-text">Repository File</h1>
         <p className="text-mui-darkGray">
           Akses semua materi kuliah, makalah, dan tugas dalam satu tempat.
         </p>
@@ -92,21 +109,21 @@ const Repository = () => {
       
       <div className="mb-6">
         <div className="relative">
-          <input type="text" placeholder="Cari file atau materi..." className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-mui-blue" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
+          <input type="text" placeholder="Cari file atau materi..." className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
         </div>
       </div>
       
       <Tabs defaultValue="materials" className="w-full">
-        <TabsList className="mb-6">
-          <TabsTrigger value="materials">Materi Kuliah</TabsTrigger>
-          <TabsTrigger value="papers">Makalah</TabsTrigger>
-          <TabsTrigger value="assignments">Ringkasan</TabsTrigger>
+        <TabsList className="mb-6 bg-gray-100">
+          <TabsTrigger value="materials" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-teal-500 data-[state=active]:to-blue-500 data-[state=active]:text-white">Materi Kuliah</TabsTrigger>
+          <TabsTrigger value="papers" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-teal-500 data-[state=active]:to-blue-500 data-[state=active]:text-white">Makalah</TabsTrigger>
+          <TabsTrigger value="assignments" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-teal-500 data-[state=active]:to-blue-500 data-[state=active]:text-white">Ringkasan</TabsTrigger>
         </TabsList>
         
         <TabsContent value="materials" className="space-y-4">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="text-xl font-semibold">Materi Perkuliahan</h3>
-            <Button className="bg-mui-green">Upload Materi</Button>
+            <h3 className="text-xl font-semibold text-teal-700">Materi Perkuliahan</h3>
+            <Button className="bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600">Upload Materi</Button>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -116,8 +133,8 @@ const Repository = () => {
         
         <TabsContent value="papers" className="space-y-4">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="text-xl font-semibold">Makalah</h3>
-            <Button className="bg-mui-green">Upload Makalah</Button>
+            <h3 className="text-xl font-semibold text-teal-700">Makalah</h3>
+            <Button className="bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600">Upload Makalah</Button>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -127,8 +144,8 @@ const Repository = () => {
         
         <TabsContent value="assignments" className="space-y-4">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="text-xl font-semibold">Tugas</h3>
-            <Button className="bg-mui-green">Upload Tugas</Button>
+            <h3 className="text-xl font-semibold text-teal-700">Tugas</h3>
+            <Button className="bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600">Upload Tugas</Button>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
