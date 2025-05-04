@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -7,40 +6,35 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
-
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleLogin = (event: React.FormEvent) => {
     event.preventDefault();
     // Here you would normally handle authentication
     toast({
       title: "Login Berhasil",
-      description: "Selamat datang kembali di Kelas PKU MUI Hub!",
+      description: "Selamat datang kembali di Kelas PKU MUI Hub!"
     });
   };
-
   const handleRegister = (event: React.FormEvent) => {
     event.preventDefault();
     // Here you would normally handle registration
     toast({
       title: "Registrasi Berhasil",
-      description: "Akun berhasil dibuat! Silakan login.",
+      description: "Akun berhasil dibuat! Silakan login."
     });
   };
-
-  return (
-    <div className="container mx-auto px-4 py-12">
+  return <div className="container mx-auto px-4 py-12">
       <div className="max-w-md mx-auto">
         <Card>
           <CardHeader className="text-center">
             <CardTitle className="text-2xl">Selamat Datang</CardTitle>
-            <CardDescription>
-              Masuk atau daftar untuk mengakses semua fitur Kelas PKU MUI Hub
-            </CardDescription>
+            <CardDescription>Masuk atau daftar untuk mengakses semua fitur Kelas PKU MUI 19</CardDescription>
           </CardHeader>
           
           <CardContent>
@@ -55,14 +49,7 @@ const Login = () => {
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input 
-                        id="email" 
-                        type="email" 
-                        placeholder="nama@email.com" 
-                        required 
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                      />
+                      <Input id="email" type="email" placeholder="nama@email.com" required value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
                     
                     <div className="space-y-2">
@@ -72,13 +59,7 @@ const Login = () => {
                           Lupa password?
                         </a>
                       </div>
-                      <Input 
-                        id="password" 
-                        type="password" 
-                        required 
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                      />
+                      <Input id="password" type="password" required value={password} onChange={e => setPassword(e.target.value)} />
                     </div>
                     
                     <Button type="submit" className="w-full bg-mui-blue">
@@ -93,36 +74,17 @@ const Login = () => {
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Nama Lengkap</Label>
-                      <Input 
-                        id="name" 
-                        placeholder="Masukkan nama lengkap" 
-                        required 
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                      />
+                      <Input id="name" placeholder="Masukkan nama lengkap" required value={name} onChange={e => setName(e.target.value)} />
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="reg-email">Email</Label>
-                      <Input 
-                        id="reg-email" 
-                        type="email" 
-                        placeholder="nama@email.com" 
-                        required 
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                      />
+                      <Input id="reg-email" type="email" placeholder="nama@email.com" required value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="reg-password">Password</Label>
-                      <Input 
-                        id="reg-password" 
-                        type="password" 
-                        required 
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                      />
+                      <Input id="reg-password" type="password" required value={password} onChange={e => setPassword(e.target.value)} />
                     </div>
                     
                     <Button type="submit" className="w-full bg-mui-blue">
@@ -134,19 +96,9 @@ const Login = () => {
             </Tabs>
           </CardContent>
           
-          <CardFooter className="flex justify-center">
-            <p className="text-sm text-center text-mui-darkGray">
-              Dengan masuk atau mendaftar, Anda menyetujui{" "}
-              <a href="#" className="text-mui-blue hover:underline">
-                Syarat & Ketentuan
-              </a>{" "}
-              kami.
-            </p>
-          </CardFooter>
+          
         </Card>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Login;
